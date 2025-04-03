@@ -18,17 +18,15 @@
 <body>
     <h1 class="text-center p-3">Registrazione</h1>
     <div class="mx-auto w-50 p-3 border border-dark border-2 rounded-3">
-        <form action="./login.php" method="post">
+        <form action="./script_registrazione.php" method="post">
             <p class="text-danger"><?php
                 switch ($_SESSION["erroreRegistrazione"]) {
                     case 1:
-                        echo "Username già in uso!";        
+                        echo "Username già in uso!";
+                        break;       
                     case 2:
                         echo "Email già in uso!";
-                    case 3:
-                        echo "Le email non coincidono!";
-                    case 4:
-                        echo "Le password non coincidono!";
+                        break;
                 }
                 $_SESSION["erroreRegistrazione"] = -1;
             ?></p>
@@ -49,15 +47,7 @@
                 <input type="email" class="form-control" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="emailConferma" class="form-label"><b>Conferma email *</b></label>
-                <input type="email" class="form-control" name="emailConfemra" required>
-            </div>
-            <div class="mb-3">
                 <label for="password" class="form-label"><b>Password *</b></label>
-                <input type="password" class="form-control" name="password" required>
-            </div>
-            <div class="mb-3">
-                <label for="passwordConferma" class="form-label"><b>Conferma password *</b></label>
                 <input type="password" class="form-control" name="password" required>
             </div>
             <input type="radio" required> Accetta termini e condizioni d'uso * <br>

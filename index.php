@@ -27,8 +27,8 @@
                 <label for="password" class="form-label"><b>Password</b></label>
                 <input type="password" class="form-control" name="password" required>
             </div>
-            <p>Non hai un account? <a href="./registrazione.php"> M'importa na sega</a></p>
-            <button type="submit" class="btn btn-primary">Invia</button><br><br>
+            <p>Non hai un account? <a href="./registrazione.php"> Registrati ora!</a></p>
+            <button type="submit" >Invia</button><br><br>
             <p class="text-danger"><?php
                 if ($_SESSION["erroreLogin"] == 1) {
                     echo "Username inesistente!";        

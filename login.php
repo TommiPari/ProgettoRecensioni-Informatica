@@ -2,10 +2,11 @@
     session_start();
     include("./connection/connessione.php");
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = hash("sha256", $_POST["password"]);
     if ($conn->query("SELECT username FROM utente WHERE username = '$username'")->num_rows > 0) {
         if ($conn->query("SELECT username FROM utente WHERE username = '$username' AND utente.password = '$password'")->num_rows > 0) {
             $_SESSION["erroreLogin"] = 0;
+            $_SESSION["username"] = $username;
             header("Location: homepage.php");
             exit;
         } else {

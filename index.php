@@ -28,15 +28,15 @@
                 <input type="password" class="form-control" name="password" required>
             </div>
             <p>Non hai un account? <a href="./registrazione.php"> Registrati ora!</a></p>
-            <button type="submit" >Invia</button><br><br>
-            <p class="text-danger"><?php
+            <button type="submit" class="btn btn-success">Invia</button><br>
+            <?php
                 if ($_SESSION["erroreLogin"] == 1) {
-                    echo "Username inesistente!";        
+                    echo "<br><p class='text-danger'>Username inesistente!</p>";        
                 }  else if ($_SESSION["erroreLogin"] == 2) {
-                    echo "Password errata!";
+                    echo "<br><p class='text-danger'>Password errata!</p>";
                 }
                 $_SESSION["erroreLogin"] = -1;
-            ?></p>
+            ?>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

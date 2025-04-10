@@ -1,3 +1,19 @@
+body {
+    background-image: url("../images/ristorante.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.divBackground {
+    border: solid black 1px;
+    background-color: rgb(248, 248, 248);
+    padding: 2%;
+    margin: auto;
+    border-radius: 15px;
+}
+
 .divInTheMiddle {
     position: fixed;
     top: 50%;

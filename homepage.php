@@ -3,6 +3,7 @@
     if ($_SESSION["erroreLogin"] != 0) {
         header("Location: index.php");
     }
+    include("./connection/connessione.php");
 
 ?>
 <!DOCTYPE html>
@@ -25,12 +26,23 @@
             </div>
         </nav>
         <!-- Body -->
-        <div class="w-100 p-3">
+        <div class="mt-3 w-75 divBackground">
             <h1>Benvenuto <?php echo $_SESSION["username"] ?>!</h1>
+            <h3>Numero di recensioni effettuate: 
+                <?php
+                    $recensioni = $conn->query(
+                        "SELECT COUNT(*) as tot FROM recensione r JOIN utente u ON u.id_utente = r.id_utente WHERE u.username = '". $_SESSION["username"] ."'"
+                    )->fetch_assoc()["tot"];
+                    echo $recensioni;
+                ?>
+            </h3><br>
+            <?php
+                include("./tabellaRecensioni.php");
+            ?>
         </div>
     </div>
     <!-- Logout -->
-    <div class="d-none divInTheMiddle p-3 border border-dark border-2 rounded-3 bg-light" id="confermaLogout">
+    <div class="d-none divInTheMiddle divBackground" id="confermaLogout">
         <div class="text-end mb-2">
             <button class="btn btn-danger" onclick="chiudiLogout()">X</button>
         </div>    

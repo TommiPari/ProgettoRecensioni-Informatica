@@ -2,6 +2,9 @@
     session_start();
     if (!isset($_SESSION["erroreLogin"])) {
         $_SESSION["erroreLogin"] = -1;
+    } else if ($_SESSION["erroreLogin"] == 0) {
+        header("Location: homepage.php");
+        exit;
     }
 ?>
 <!DOCTYPE html>

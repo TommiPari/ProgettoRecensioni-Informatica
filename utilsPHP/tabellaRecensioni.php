@@ -3,7 +3,7 @@
         if ($result = $conn->query("SELECT rs.nome, rs.indirizzo, r.voto, r.data FROM recensione r JOIN utente u ON r.id_utente = u.id_utente JOIN ristorante rs ON rs.id_ristorante = r.id_ristorante WHERE username = '".$_SESSION["username"]."'")) {
             if ($result->num_rows > 0) {
                 foreach ($result->fetch_fields() as $column) {
-                    echo "<th>".$column->name."</th>";
+                    echo "<th>".ucfirst($column->name)."</th>";
                 }
                 echo "</tr>";
                 while($row = $result->fetch_assoc()) {

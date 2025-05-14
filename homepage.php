@@ -72,7 +72,13 @@
                     </label>
                 </div> <br>
                 <?php include("./utilsPHP/selectRistoranti.php"); ?> <br>
-                <button type="submit" class="btn btn-outline-success">Invia</button>
+                <button type="submit" class="btn btn-outline-success mb-3">Invia</button><br>
+                <?php
+                    if (isset($_SESSION["esitoRecensione"])) {
+                        echo "<p>".$_SESSION["esitoRecensione"]."</p>";
+                        unset($_SESSION["esitoRecensione"]);
+                    }
+                ?>
             </form>
         </div>
     </div>

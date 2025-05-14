@@ -1,11 +1,10 @@
 <?php
     session_start();
-    if ($_SESSION["erroreLogin"] != 0) {
+    if ($_SESSION["login"]) {
         header("Location: index.php");
         exit;
     }
     include("./connection/connessione.php");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

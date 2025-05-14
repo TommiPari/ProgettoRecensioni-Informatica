@@ -8,7 +8,7 @@
         $_SESSION["esitoRecensione"] = "Impossibile fare altre recensioni per questo ristorante";
     } else {
         $_SESSION["esitoRecensione"] = "Recensione avvenuta con successo!";
-        $conn->query("INSERT INTO recensione (voto, id_utente, id_ristorante) VALUES ($voto, $id_utente, $id_ristorante)");
+        $conn->query("INSERT INTO recensione (voto, id_utente, id_ristorante) VALUES ($voto, $id_utente, $id_ristorante')");
     }
     header("Location: homepage.php");
     exit;

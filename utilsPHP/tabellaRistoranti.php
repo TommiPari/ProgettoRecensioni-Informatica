@@ -1,6 +1,6 @@
 <table class="table mx-auto w-75">
     <?php
-        if ($result = $conn->query("SELECT r.nome, r.indirizzo, r.citta, COUNT(*) as recensioni FROM ristorante r LEFT JOIN recensione rc ON r.id_ristorante = rc.id_ristorante GROUP BY r.nome")) {
+        if ($result = $conn->query("SELECT r.nome, r.indirizzo, r.citta, COUNT(rc.id_recensione) as recensioni FROM ristorante r LEFT JOIN recensione rc ON r.id_ristorante = rc.id_ristorante GROUP BY r.nome")) {
             if ($result->num_rows > 0) {
                 foreach ($result->fetch_fields() as $column) {
                     echo "<th>".ucfirst($column->name)."</th>";

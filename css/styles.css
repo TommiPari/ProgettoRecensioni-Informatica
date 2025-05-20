@@ -18,6 +18,10 @@
     }
 }
 
+#map {
+    height: 25vw;
+}
+
 body {
     background-image: url("../images/ristorante.png");
     background-position: center;

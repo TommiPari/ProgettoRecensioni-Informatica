@@ -15,6 +15,5 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 function impostaMarker(lat, lon) {
-    console.log("ciao");
     var marker = L.marker([lat, lon]).addTo(map);
 }

@@ -35,7 +35,10 @@
             <h1><?php echo $ristorante["nome"]; ?></h1>
             <p><i><?php echo $ristorante["indirizzo"]. ", ". $ristorante["citta"];?></i></p>
             <div class="row">
-                <div class="col-12 col-sm-6"><?php include("./utilsPHP/tabellaRecensioniRistorante.php"); ?></div>
+                <div class="col-12 col-sm-6">
+                    <?php include("./utilsPHP/tabellaRecensioniRistorante.php"); ?>
+                    <a href="./homepage.php"><button class="btn btn-outline-danger">Torna indietro</button></a>
+                </div>
                 <div id="map" class="col-sm-6"></div>
             </div>
         </div>

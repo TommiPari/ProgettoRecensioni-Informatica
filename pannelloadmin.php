@@ -35,6 +35,8 @@
                 <input type="text" class="form-control" name="nome" placeholder="Nome"><br>
                 <input type="text" class="form-control" name="indirizzo" placeholder="Indirizzo"><br>
                 <input type="text" class="form-control" name="citta" placeholder="Citta"><br>
+                <input type="double" class="form-control" name="lat" placeholder="Latitudine"><br>
+                <input type="double" class="form-control" name="lon" placeholder="Longitudine"><br>
                 <button type="submit" class="btn btn-outline-success mb-3">Invia</button><br>
                 <?php
                     if (isset($_SESSION["esitoRistorante"])) {

@@ -2,10 +2,9 @@
     session_start();
     if (!isset($_SESSION["erroreLogin"])) {
         $_SESSION["erroreLogin"] = -1;
-    } else if ($_SESSION["login"] || $_SESSION["admin"]) {
-        header("Location: homepage.php");
-        exit;
     }
+    $_SESSION["login"] = false;
+    $_SESSION["admin"] = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">

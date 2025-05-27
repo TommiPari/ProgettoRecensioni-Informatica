@@ -1,10 +1,11 @@
 <?php
     session_start();
-    if (!isset($_SESSION["erroreLogin"])) {
-        $_SESSION["erroreLogin"] = -1;
+    if (!isset($_SESSION["login"])) {
+        $_SESSION["login"] = false;
     }
-    $_SESSION["login"] = false;
-    $_SESSION["admin"] = false;
+    if (!isset($_SESSION["admin"])) {
+        $_SESSION["admin"] = false;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,31 +20,25 @@
 </head>
 
 <body>
-    <div class="mt-5 w-50 divBackground">
-        <h1 class="text-center">Accedi</h1>
-        <form action="./login.php" method="post">
-            <div class="mb-3">
-                <label for="username" class="form-label"><b>Username</b></label>
-                <input type="text" class="form-control" name="username" required>
+    <?php include("./utilsPHP/navbar.php"); ?>
+    <div class="mt-5 w-75 divBackground">
+        <h1>I'desinare</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>I'desinare è la nuova piattaforma digitale dedicata agli amanti del buon cibo e delle esperienze gastronomiche autentiche. Progettata per offrire recensioni affidabili, dettagliate e aggiornate sui ristoranti di ogni tipo (dalle osterie di quartiere alle cucine stellate). I'desinare mette al centro la voce dei clienti reali.<br>
+                    Con un'interfaccia intuitiva e un sistema di valutazione trasparente basato su gusto, servizio, ambiente e rapporto qualità-prezzo, la piattaforma permette agli utenti di condividere le proprie esperienze culinarie attraverso recensioni scritte, foto dei piatti e suggerimenti personalizzati.<br>
+                    I'desinare non è solo uno spazio per recensire, ma una vera e propria community per chi ama scoprire nuovi sapori: grazie a funzionalità come le liste personalizzate, i percorsi gastronomici e i filtri intelligenti, ogni utente può trovare il locale perfetto per ogni occasione.
+                </p>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label"><b>Password</b></label>
-                <input type="password" class="form-control" name="password" required>
+            <div class="col-6 text-center">
+                <img src="./images/logo.png" class="w-75">
             </div>
-            <p>Non hai un account? <a href="./registrazione.php"> Registrati ora!</a></p>
-            <button type="submit" class="btn btn-success">Invia</button><br>
-            <?php
-                if ($_SESSION["erroreLogin"] == 1) {
-                    echo "<br><p class='text-danger'>Username inesistente!</p>";        
-                }  else if ($_SESSION["erroreLogin"] == 2) {
-                    echo "<br><p class='text-danger'>Password errata!</p>";
-                }
-                $_SESSION["erroreLogin"] = -1;
-            ?>
-        </form>
+        </div>
     </div>
+    <?php include("./utilsPHP/formLogout.html"); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-q8vbdOJ9FB6c+Od76PVCmYl38J5+B0Sk/sPil9/JAzlZMI6JYt" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

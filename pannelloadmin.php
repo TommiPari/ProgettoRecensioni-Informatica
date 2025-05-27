@@ -19,12 +19,7 @@
 </head>
 <body>
     <div id="background">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <h2 class="navbar-brand">Recensioni ristorante</h2>
-                <button class="btn btn-outline-danger" onclick="confermaLogout()">Logout</button>
-            </div>
+        <?php include("./utilsPHP/navbar.php"); ?>v>
         </nav>
         <!-- Body -->
         <div class="mt-3 w-75 divBackground">
@@ -47,18 +42,7 @@
             </form>
         </div>
     </div>
-    <!-- Logout -->
-    <div class="d-none divInTheMiddle divBackground" id="confermaLogout">
-        <div class="text-end mb-2">
-            <button class="btn btn-danger" onclick="chiudiLogout()">X</button>
-        </div>    
-        <div class="p-3">
-            <h1>Sei sicuro di voler effettuare il logout?</h1><br>
-            <form action="./logout.php" class="text-center">
-                <button type="submit" class="btn btn-outline-danger">Conferma logout</button>
-            </form>
-        </div>
-    </div>
+    <?php include("./utilsPHP/formLogout.html"); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-q8vbdOJ9FB6c+Od76PVCmYl38J5+B0Sk/sPil9/JAzlZMI6JYt" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>

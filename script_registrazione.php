@@ -10,7 +10,7 @@
         if ($conn->query("SELECT email FROM utente WHERE email = '$email'")->num_rows == 0) {
             $conn->query("INSERT INTO utente (username, nome, cognome, email, password) VALUES ('$username', '$nome', '$cognome', '$email', '$password')");
             $_SESSION["erroreRegistrazione"] = 0;
-            header("Location: index.php");
+            header("Location: pannellologin.php");
             exit;
         } else {
             $_SESSION["erroreRegistrazione"] = 2;

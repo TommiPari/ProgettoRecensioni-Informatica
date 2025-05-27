@@ -18,12 +18,12 @@
             }
         } else {
             $_SESSION["erroreLogin"] = 2;
-            header("Location: index.php");
+            header("Location: pannellologin.php");
             exit;
         }
     } else {
         $_SESSION["erroreLogin"] = 1;
-        header("Location: index.php");
+        header("Location: pannellologin.php");
         exit;
     }
 ?>

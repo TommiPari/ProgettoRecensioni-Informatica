@@ -20,18 +20,20 @@
 </head>
 
 <body>
+    <div id="background">
     <?php include("./utilsPHP/navbar.php"); ?>
-    <div class="mt-5 w-75 divBackground">
-        <h1>I'desinare</h1>
-        <div class="row">
-            <div class="col-6">
-                <p>I'desinare è la nuova piattaforma digitale dedicata agli amanti del buon cibo e delle esperienze gastronomiche autentiche. Progettata per offrire recensioni affidabili, dettagliate e aggiornate sui ristoranti di ogni tipo (dalle osterie di quartiere alle cucine stellate). I'desinare mette al centro la voce dei clienti reali.<br>
-                    Con un'interfaccia intuitiva e un sistema di valutazione trasparente basato su gusto, servizio, ambiente e rapporto qualità-prezzo, la piattaforma permette agli utenti di condividere le proprie esperienze culinarie attraverso recensioni scritte, foto dei piatti e suggerimenti personalizzati.<br>
-                    I'desinare non è solo uno spazio per recensire, ma una vera e propria community per chi ama scoprire nuovi sapori: grazie a funzionalità come le liste personalizzate, i percorsi gastronomici e i filtri intelligenti, ogni utente può trovare il locale perfetto per ogni occasione.
-                </p>
-            </div>
-            <div class="col-6 text-center">
-                <img src="./images/logo.png" class="w-75">
+        <div class="mt-5 w-75 divBackground">
+            <h1>I'desinare</h1>
+            <div class="row">
+                <div class="col-6">
+                    <p>I'desinare è la nuova piattaforma digitale dedicata agli amanti del buon cibo e delle esperienze gastronomiche autentiche. Progettata per offrire recensioni affidabili, dettagliate e aggiornate sui ristoranti di ogni tipo (dalle osterie di quartiere alle cucine stellate). I'desinare mette al centro la voce dei clienti reali.<br>
+                        Con un'interfaccia intuitiva e un sistema di valutazione trasparente basato su gusto, servizio, ambiente e rapporto qualità-prezzo, la piattaforma permette agli utenti di condividere le proprie esperienze culinarie attraverso recensioni scritte, foto dei piatti e suggerimenti personalizzati.<br>
+                        I'desinare non è solo uno spazio per recensire, ma una vera e propria community per chi ama scoprire nuovi sapori: grazie a funzionalità come le liste personalizzate, i percorsi gastronomici e i filtri intelligenti, ogni utente può trovare il locale perfetto per ogni occasione.
+                    </p>
+                </div>
+                <div class="col-6 text-center">
+                    <img src="./images/logo.png" class="w-75">
+                </div>
             </div>
         </div>
     </div>

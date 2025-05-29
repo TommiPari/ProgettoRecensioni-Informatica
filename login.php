@@ -7,12 +7,12 @@
         if ($conn->query("SELECT username FROM utente WHERE username = '$username' AND utente.password = '$password'")->num_rows > 0) {
             $_SESSION["erroreLogin"] = 0;
             $_SESSION["username"] = $username;
+            $_SESSION["login"] = true;
             if ($conn->query("SELECT admin FROM utente WHERE username = '".$_SESSION["username"]."'")->fetch_assoc()["admin"] == 1) {
                 $_SESSION["admin"] = true;
                 header("Location: pannelloadmin.php");
                 exit;
             } else {
-                $_SESSION["login"] = true;
                 header("Location: homepage.php");
                 exit;
             }

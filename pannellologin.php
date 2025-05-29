@@ -28,7 +28,7 @@
                 <label for="password" class="form-label"><b>Password</b></label>
                 <input type="password" class="form-control" name="password" required>
             </div>
-            <p>Non hai un account? <a href="./registrazione.php"> Registrati ora!</a></p>
+            <p>Non hai un account? <a href="./pannelloregistrazione.php"> Registrati ora!</a></p>
             <button type="submit" class="btn btn-success">Invia</button><br>
             <?php
                 if ($_SESSION["erroreLogin"] == 1) {

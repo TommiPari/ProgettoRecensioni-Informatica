@@ -5,9 +5,13 @@
         </div>
         <div class="nav-item">
             <?php
-                if ($_SESSION["login"] || $_SESSION["admin"]) {
-                    echo '<a href="./homepage.php"><button class="btn"><i class="bi bi-person"></i></button></a>';
-                    echo '<a href="./impostazioni.php"><button class="btn"><i class="bi bi-gear-fill"></i></button></a>';
+                if ($_SESSION["login"]) {
+                    if ($_SESSION["admin"]) {
+                        echo '<a href="./pannelloadmin.php"><button class="btn"><i class="bi bi-house-door"></i></button></a>';
+                    } else {
+                        echo '<a href="./homepage.php"><button class="btn"><i class="bi bi-house-door"></i></button></a>';
+                    }
+                    echo '<a href="./account.php"><button class="btn"><i class="bi bi-person"></i></button></a>';
                     echo '<button class="btn btn-outline-danger" onclick="confermaLogout()">Logout</button>';
                 } else {
                     echo '<a href="pannellologin.php"><button class="btn btn-outline-success">Login</button></a>';

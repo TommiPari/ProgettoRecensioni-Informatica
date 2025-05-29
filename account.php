@@ -22,31 +22,32 @@
         <?php include("./utilsPHP/navbar.php"); ?>
         <!-- Body -->
         <div class="mt-3 w-75 divBackground">
-            <h1>Impostazioni <?php echo $_SESSION["username"] ?></h1>
+            <h1>Impostazioni account</h1><hr>
+
             <div>
                 <h3>Cambio password</h3>
-                <hr>
                 <form action="./script_cambioPassword.php" method="post">
-                    <input type="password" class="form-control" placeholder="Inserire una nuova password" name="password" required>
-                    <button type="submit" class="btn btn-success">Invia</button>
+                    <div class="input-group">
+                        <input type="password" class="form-control w-50" placeholder="Inserire una nuova password" name="password" required>
+                        <span class="input-group-text bg-success"><button type="submit" class="btn btn-success">Invia</button></span>
+                    </div>
                     <?php
                         if (isset($_SESSION["erroreCambioPassword"])) {
                             switch($_SESSION["erroreCambioPassword"]) {
                                 case 0:
-                                    echo "<br><p class='text-success'>Password cambiata con successo!</p>";
+                                    echo "<p class='text-success'>Password cambiata con successo!</p>";
                                     break;
                                 case 1:
-                                    echo "<br><p class='text-danger'>Username inesistente!</p>";   
+                                    echo "<p class='text-danger'>Inserire una password differente da quella attuale</p>";   
                                     break;
                                 case 2:
-                                    echo "<br><p class='text-danger'>Errore nella query!</p>";
+                                    echo "<p class='text-danger'>Errore nella query!</p>";
                                     break;
                             }
                         }
                         unset($_SESSION["erroreCambioPassword"]);
                     ?>
                 </form>
-                <hr>
             </div>
         </div>
     </div>

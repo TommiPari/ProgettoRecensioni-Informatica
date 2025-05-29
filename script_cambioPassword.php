@@ -12,6 +12,6 @@
     } else {
         $_SESSION["erroreCambioPassword"] = 2;
     }
-    header("Location: impostazioni.php");
+    header("Location: account.php");
     exit;
 ?>

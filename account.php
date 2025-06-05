@@ -23,7 +23,41 @@
         <!-- Body -->
         <div class="mt-3 w-75 divBackground">
             <h1>Impostazioni account</h1><hr>
+            <?php
+                $username = $_SESSION["username"];
+                $query = "SELECT username, nome, cognome, email, data_registrazione FROM utente WHERE username = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param("s", $username);
+                $stmt->execute();
+                $result = $stmt->get_result();
 
+            if ($result && $result->num_rows > 0): 
+                $user = $result->fetch_assoc(); ?>
+                <div class="table-responsive w-100 mb-4">
+                    <table class="table table-bordered table-striped text-center align-middle w-75 mx-auto">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Username</th>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Email</th>
+                                <th>Data registrazione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?= htmlspecialchars($user["username"]) ?></td>
+                                <td><?= htmlspecialchars($user["nome"]) ?></td>
+                                <td><?= htmlspecialchars($user["cognome"]) ?></td>
+                                <td><?= htmlspecialchars($user["email"]) ?></td>
+                                <td><?= date("d/m/Y", strtotime($user["data_registrazione"])) ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <?php else: ?>
+                    <div class="alert alert-warning text-center">Informazioni utente non disponibili.</div>
+                <?php endif; ?>
             <div>
                 <h3>Cambio password</h3>
                 <form action="./script_cambioPassword.php" method="post">

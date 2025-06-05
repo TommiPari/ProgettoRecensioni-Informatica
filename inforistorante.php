@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-12 col-sm-6">
                     <?php include("./utilsPHP/tabellaRecensioniRistorante.php"); ?>
-                    <a href="./homepage.php"><button class="btn btn-outline-danger">Torna indietro</button></a>
+                    <a href="./listaristoranti.php"><button class="btn btn-outline-danger">Torna indietro</button></a>
                 </div>
                 <div id="map" class="col-sm-6"></div>
             </div>

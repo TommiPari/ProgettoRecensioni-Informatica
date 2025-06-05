@@ -1,23 +1,40 @@
-<table class="table mx-auto w-100">
-    <?php
-        if ($result = $conn->query("SELECT u.username, r.voto, r.data FROM recensione r JOIN utente u ON r.id_utente = u.id_utente JOIN ristorante rs ON rs.id_ristorante = r.id_ristorante WHERE rs.id_ristorante = '$id_ristorante'")) {
-            if ($result->num_rows > 0) {
-                foreach ($result->fetch_fields() as $column) {
-                    echo "<th>".ucfirst($column->name)."</th>";
-                }
-                echo "</tr>";
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>".$row["username"]."</td>";
-                    echo "<td>".$row["voto"]."</td>";
-                    echo "<td>".$row["data"]."</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<p style='color:red'>Nessuna recensione effettuata!</p>";
-            }
-        } else {
-            echo "<h1 style='color:red'>Errore nella query</h1>";
-        }
-    ?>
-</table>
+<?php
+$query = "
+    SELECT u.username, r.voto, r.data 
+    FROM recensione r 
+    JOIN utente u ON r.id_utente = u.id_utente 
+    JOIN ristorante rs ON rs.id_ristorante = r.id_ristorante 
+    WHERE rs.id_ristorante = '$id_ristorante'
+";
+
+if ($result = $conn->query($query)) {
+    if ($result->num_rows > 0): ?>
+        <div class="table-responsive mt-4">
+            <table class="table table-striped table-hover table-bordered text-center align-middle w-100">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Username</th>
+                        <th>Voto</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($row["username"]) ?></td>
+                            <td><span class="badge text-dark"><?= $row["voto"] ?>⭐</span></td>
+                            <td><?= date("d/m/Y", strtotime($row["data"])) ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
+    <?php else: ?>
+        <div class="alert alert-info text-center mt-3" role="alert">
+            Nessuna recensione effettuata!
+        </div>
+    <?php endif;
+} else {
+    echo "<div class='alert alert-danger text-center'>Errore nella query.</div>";
+}
+?>

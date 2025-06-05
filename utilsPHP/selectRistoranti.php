@@ -1,4 +1,4 @@
-<select class="form-select" name="ristorante" required>
+<select class="form-select w-50 mx-auto" name="ristorante" required>
     <?php
         if ($result = $conn->query("SELECT nome, id_ristorante FROM ristorante")) {
             if ($result->num_rows > 0) {
